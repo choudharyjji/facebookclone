@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Checkbox, Button, Grid, Container, Header, Segment } from 'semantic-ui-react';
+import { Form, Button, Grid, Container, Header, Segment } from 'semantic-ui-react';
 
 export default class LoginPage extends React.Component{
     render() {

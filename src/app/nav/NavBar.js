@@ -15,6 +15,7 @@ export default class NavBar extends Component{
                     </Menu.Item>
                     <Menu.Item position='right'>
                         <Button as={NavLink} to='/login' inverted>Login</Button>
+                        <Button as={NavLink} to='/register' inverted>Register</Button>
                     </Menu.Item>
                 </Container>
             </Menu>
