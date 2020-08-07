@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Container, Grid, Header, Segment, Form, Button } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class RegisterPage extends Component {
+class RegisterPage extends Component {
 
     state = {
        email: '',
        passowrd: '',
-       confirmPassword: '' 
+       confirmPassword: '' ,
     }
 
     //fat arrow function
@@ -32,6 +33,8 @@ export default class RegisterPage extends Component {
     }
 
     render(){
+        const { isUserLoggedIn } = this.props;
+        console.log(isUserLoggedIn);
         return (
             <Container>
                 <Grid>
@@ -70,3 +73,11 @@ export default class RegisterPage extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        isUserLoggedIn: state.auth.authenticated
+    }
+}
+
+export default connect(mapStateToProps)(RegisterPage);
